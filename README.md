@@ -154,8 +154,8 @@ A supervised machine learning algorithm that uses ensemble learning with multipl
 | Feature | Description | Type | Range |
 |---------|-------------|------|-------|
 | `time` | Hour of the day | Integer | 0-23 |
-| `aqi_processed` | Air Quality Index with sensor noise | Float | 0-300+ |
-| `aqi_prev` | Previous AQI reading | Float | 0-300+ |
+| `aqi_processed` | Air Quality Index with sensor noise | Float | 0-200+ |
+| `aqi_prev` | Previous AQI reading | Float | 0-200+ |
 | `isPurifierOn` | Purifier operational status | Binary | 0 or 1 |
 
 ### Output Classes
