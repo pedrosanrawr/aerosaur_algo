@@ -114,13 +114,13 @@ After training, you can make predictions by modifying the prediction cells with 
 ```python
 # Example prediction
 aqi = 180
-aqi_noisy = aqi + np.random.normal(0, 2)
+aqi_processed = aqi + np.random.normal(0, 2)
 aqi_prev = 175
 isPurifierOn = 1
 
 sample = pd.DataFrame(
     [[21, aqi_noisy, aqi_prev, isPurifierOn]],
-    columns=['time', 'aqi_noisy', 'aqi_prev', 'isPurifierOn']
+    columns=['time', 'aqi_processed', 'aqi_prev', 'isPurifierOn']
 )
 
 prediction = model.predict(sample)
@@ -136,7 +136,6 @@ aerosaur_algo/
 │
 ├── aerosaur_algo.ipynb          # Main Jupyter notebook
 ├── README.md                     # Project documentation
-├── requirements.txt              # Python dependencies
 └── .gitignore                    # Git ignore file
 ```
 
@@ -155,7 +154,7 @@ A supervised machine learning algorithm that uses ensemble learning with multipl
 | Feature | Description | Type | Range |
 |---------|-------------|------|-------|
 | `time` | Hour of the day | Integer | 0-23 |
-| `aqi_noisy` | Air Quality Index with sensor noise | Float | 0-300+ |
+| `aqi_processed` | Air Quality Index with sensor noise | Float | 0-300+ |
 | `aqi_prev` | Previous AQI reading | Float | 0-300+ |
 | `isPurifierOn` | Purifier operational status | Binary | 0 or 1 |
 
